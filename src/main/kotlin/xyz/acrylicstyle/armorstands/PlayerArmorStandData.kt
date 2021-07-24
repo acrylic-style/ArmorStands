@@ -1,5 +1,6 @@
 package xyz.acrylicstyle.armorstands
 
+import net.md_5.bungee.api.ChatColor
 import net.minecraft.server.v1_16_R3.EntityArmorStand
 import org.bukkit.entity.Player
 import xyz.acrylicstyle.armorstands.ArmorStandUtil.destroy
@@ -9,6 +10,7 @@ import xyz.acrylicstyle.armorstands.ArmorStandUtil.setText
 import xyz.acrylicstyle.armorstands.Util.addX
 import xyz.acrylicstyle.armorstands.Util.addY
 import xyz.acrylicstyle.armorstands.Util.sendTo
+import java.awt.Color
 import java.awt.image.BufferedImage
 
 class PlayerArmorStandData(private val player: Player, width: Int, height: Int) {
@@ -64,7 +66,7 @@ class PlayerArmorStandData(private val player: Player, width: Int, height: Int) 
         if (removed) return
         for (y in 0..img.height) {
             for (x in 0..img.width) {
-                val color = ChatColors.getNearestChatColor(img.getRGB(x, y))
+                val color = ChatColor.of(Color(img.getRGB(x, y)))
                 armorStands[y][x].setText("$color$SQUARE")
             }
         }
