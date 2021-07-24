@@ -1,0 +1,12 @@
+name: ArmorStands
+main: xyz.acrylicstyle.armorstands.ArmorStandsPlugin
+version: 1.0.0
+commands:
+  aspawn:
+    permission: armorstands.spawn
+  aload:
+    permission: armorstands.load
+  astart:
+    permission: armorstands.start
+  astop:
+    permission: armorstands.stop
